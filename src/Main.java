@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Домашнее задание 1-2 урока ООП 1 **********************************************************");
+        System.out.println("Домашнее задание 1-3 урока ООП 1 **********************************************************");
         System.out.println();
 
         System.out.println("Задание 1 и 2." + "\n");
@@ -14,6 +14,8 @@ public class Main {
             human3.printHumans();
             Human human4 = new Human("Артём", "Москва", 27, "директор по развитию бизнеса");
             human4.printHumans();
+            Human human5 = new Human(null, null, 0,null );
+            human5.printHumans();
         }
 
         System.out.println();
@@ -28,6 +30,9 @@ public class Main {
             Car car4 = new Car("Kia", "Sportage", 2018, "Южная Корея", "красный", 2.4);
             car4.printCars();
             Car car5 = new Car("Hyundai", "Avante", 2016, "Южная Корея", "оранжевый", 1.6);
+            car5.printCars();
+            Car car6 = new Car(null, null, 0, null, null, 0);
+            car6.printCars();
         }
 
     }

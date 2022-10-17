@@ -6,10 +6,14 @@ public class Human {
     String position;
 
     Human (String name, String town, int yearOfBirth, String position) {
-        this.name = name;
-        this.town = town;
-        this.yearOfBirth = yearOfBirth;
-        this.position = position;
+        if (name == null) { this.name = "Информация не указана";
+        } else this.name = name;
+        if (town == null) { this.town = "Информация не указана";
+        } else this.town = town;
+        if (position == null) { this.position = "Информация не указана";
+        } else this.position = position;
+        if (yearOfBirth <= 0) { this.yearOfBirth = 2022;
+        } else this.yearOfBirth = yearOfBirth;
     }
     void printHumans () {
         System.out.println("Привет! Меня зовут " + name + ". Я из города " + town +
