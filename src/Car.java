@@ -15,8 +15,10 @@ public class Car {
         this.yearOfIssue = yearOfIssue;
         this.assemblyCountry = assemblyCountry;
 
-        System.out.println(brand + " " + model + ", " + "\t" + yearOfIssue + "-го года выпуска, сборка " +
-                assemblyCountry + ", " + "\t" + "цвет " + bodyColor + ", объем двигателя - " + engineVolume + " литра.");
-
     }
+       void printCars() {
+            System.out.println(brand + " " + model + ", " + yearOfIssue + "-го года выпуска, сборка " +
+                    assemblyCountry + ", " + "цвет " + bodyColor + ", объем двигателя - " + engineVolume + " литра.");
+        }
+
 }

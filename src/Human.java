@@ -10,8 +10,9 @@ public class Human {
         this.town = town;
         this.yearOfBirth = yearOfBirth;
         this.position = position;
-
+    }
+    void printHumans () {
         System.out.println("Привет! Меня зовут " + name + ". Я из города " + town +
-                ". Я родился в " +  (2022 - yearOfBirth) + " году. Я работаю на должности " + position + ". Будем знакомы!");
+                ". Я родился в " + (2022 - yearOfBirth) + " году. Я работаю на должности " + position + ". Будем знакомы!");
     }
 }
