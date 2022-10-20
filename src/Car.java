@@ -1,5 +1,5 @@
 public class Car {
-
+/*  ПЕРЕНОШУ ЭТО В НОВЫЙ ПРОЕКТ CAR -  HW_OOP2_CAR
     String brand;
     String model;
     double engineVolume;
@@ -27,11 +27,11 @@ public class Car {
         то в результате будет выведен "default" абсолютно везде, где есть ссылка на поле brand !!!
         Тоже самое с другими полями................................................................
          */
-
+/*
     }
        void printCars() {
             System.out.println(brand + " " + model + ", " + yearOfIssue + "-го года выпуска, сборка " +
                     assemblyCountry + ", " + "цвет " + bodyColor + ", объем двигателя - " + engineVolume + " литра.");
         }
-
+*/
 }
