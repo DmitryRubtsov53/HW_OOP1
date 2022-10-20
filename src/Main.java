@@ -16,8 +16,10 @@ public class Main {
             human4.printHumans();
             Human human5 = new Human(null, null, 0,null );
             human5.printHumans();
+            Human human6 = new Human("Владимир", "Казань", 21,"безработный" );
+            human6.printHumans();
         }
-
+/*  ПЕРЕНОШУ ЭТО В НОВЫЙ ПРОЕКТ CAR -  HW_OOP2_CAR
         System.out.println();
         System.out.println("Задание 3." + "\n");
         {
@@ -34,6 +36,8 @@ public class Main {
             Car car6 = new Car(null, null, 0, null, null, 0);
             car6.printCars();
         }
+
+ */
 
     }
 }
