@@ -87,7 +87,7 @@ public class Main {
         double sum = numbflower0 * flower[0].getCost() + numbflower1 * flower[1].getCost() +
                 numbflower2 * flower[2].getCost() + numbflower3 * flower[3].getCost() ;
 
-        System.out.println("Стоимость букета: " + Math.round(sum * 1.1) + " рублей.");
+        System.out.println("Стоимость букета: " + (float)(sum * 1.1) + " рублей.");
 
         System.out.println("Срок стояния букета: " + lifeBouquet + " дня.");
     }
