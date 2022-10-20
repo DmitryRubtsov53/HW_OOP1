@@ -5,10 +5,10 @@ import static java.lang.Integer.MAX_VALUE;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Домашнее задание 1-3 урока ООП 1 **********************************************************");
+        System.out.println("Задание 1 урока ООП 2 **********************************************************");
         System.out.println();
 
-        System.out.println("Задание 1 и 2." + "\n");
+        System.out.println("Список людей:" + "\n");
         {
             Human human1 = new Human("Максим", "Минск", 35, "бренд-менеджер");
             human1.printHumans();
@@ -22,15 +22,15 @@ public class Main {
             human5.printHumans();
             Human human6 = new Human("Владимир", "Казань", 21,"безработный" );
             human6.printHumans();
+
+            System.out.println();
+            System.out.println("Изменил город и возраст в 4-й строке:");
+            human5.setTown("Уфа"); human5.setYearOfBirth(50);
+            human5.printHumans ();
         }
-/*
-Роза обыкновенная из Голландии, стоимость штуки — 35,59 рублей.
-Хризантема, стоимость штуки — 15 рублей, срок стояния — 5 дней.
-Пион из Англии, стоимость штуки — 69,9 рублей, срок стояния — 1 день.
-Гипсофила, страна происхождения — Турция, стоимость штуки — 19,5 рублей, срок стояния — 10 дней.
- */
+
         System.out.println();
-        System.out.println("Задание 3. Цветы **************************************************************************" + "\n");
+        System.out.println("Задание 2. Цветы **************************************************************************" + "\n");
         System.out.println("В магазине есть следующие цветы:"+ "\n");
 
         Flower [] flower = new Flower[4];
@@ -87,7 +87,7 @@ public class Main {
         double sum = numbflower0 * flower[0].getCost() + numbflower1 * flower[1].getCost() +
                 numbflower2 * flower[2].getCost() + numbflower3 * flower[3].getCost() ;
 
-        System.out.println("Стоимость букета: " + (float)(sum * 1.1) + " рублей.");
+        System.out.println("Стоимость букета с учетом 10% флориста: " + (float)(sum * 1.1) + " рублей.");
 
         System.out.println("Срок стояния букета: " + lifeBouquet + " дня.");
     }
