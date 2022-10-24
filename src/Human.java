@@ -1,19 +1,21 @@
+import java.time.LocalDate;
+
 public class Human {
 
     String name;
     private String town;
-    private int yearOfBirth;
+    private int age;
     String position;
 
-    Human (String name, String town, int yearOfBirth, String position) {
+    Human (String name, String town, int age, String position) {
         if (name == null) { this.name = "Информация не указана";
         } else this.name = name;
         if (town == null) { this.town = "Информация не указана";
         } else this.town = town;
         if (position == null) { this.position = "Информация не указана";
         } else this.position = position;
-        if (yearOfBirth < 0) { this.yearOfBirth = 2022;
-        } else this.yearOfBirth = yearOfBirth;
+        if (age < 0) { this.age = LocalDate.now().getYear();
+        } else this.age = age;
     }
 
     public String getTown() {
@@ -27,16 +29,16 @@ public class Human {
     }
 
     public int getYearOfBirth() {
-        return yearOfBirth;
+        return age;
     }
 
     public void setYearOfBirth(int yearOfBirth) {
-        if (yearOfBirth < 0) { this.yearOfBirth = 2022;
-        } else this.yearOfBirth = yearOfBirth;
+        if (yearOfBirth < 0) { this.age = LocalDate.now().getYear();
+        } else this.age = yearOfBirth;
     }
 
     void printHumans () {
         System.out.println("Привет! Меня зовут " + name + ". Я из города " + town +
-                ". Я родился в " + (2022 - yearOfBirth) + " году. Я работаю на должности " + position + ". Будем знакомы!");
+                ". Я родился в " + (LocalDate.now().getYear() - age) + " году. Я работаю на должности " + position + ". Будем знакомы!");
     }
 }
