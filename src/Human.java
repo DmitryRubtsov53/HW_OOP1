@@ -2,10 +2,12 @@ import java.time.LocalDate;
 
 public class Human {
 
-    String name;
+    private String name;
     private String town;
     private int age;
     String position;
+
+
 
     Human (String name, String town, int age, String position) {
         if (name == null) { this.name = "Информация не указана";
@@ -18,6 +20,8 @@ public class Human {
         } else this.age = age;
     }
 
+    public String getName() { return name; }
+    public String getPosition() { return position;  }
     public String getTown() {
         return town;
     }
@@ -28,17 +32,17 @@ public class Human {
         } else this.town = town;
     }
 
-    public int getYearOfBirth() {
+    public int getAge() {
         return age;
     }
 
-    public void setYearOfBirth(int yearOfBirth) {
-        if (yearOfBirth < 0) { this.age = LocalDate.now().getYear();
-        } else this.age = yearOfBirth;
+    public void setAge(int age) {
+        if (age < 0) { this.age = LocalDate.now().getYear();
+        } else this.age = age;
     }
-
-    void printHumans () {
-        System.out.println("Привет! Меня зовут " + name + ". Я из города " + town +
-                ". Я родился в " + (LocalDate.now().getYear() - age) + " году. Я работаю на должности " + position + ". Будем знакомы!");
+    @Override
+    public String toString() {
+        return "Привет! Меня зовут " + name + ". Я из города " + town + ". Я родился в " +
+                (LocalDate.now().getYear() - age) + " году. Я работаю на должности " + position + ". Будем знакомы!";
     }
 }

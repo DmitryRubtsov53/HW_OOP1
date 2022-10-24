@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Flower {
 
-    private String nameFlower;
+    private final String nameFlower;
     private String flowerColor;
     private String country;     // страна происхождения цветов
     private double cost;        // стоимость цветов
@@ -11,35 +11,33 @@ public class Flower {
 
 // get & set *************************************************************************
 
-
     public String getNameFlower() {
         return nameFlower;
     }
-
     public String getFlowerColor() {
         return flowerColor;
     }
 
     public void setFlowerColor(String flowerColor) {
-        this.flowerColor = flowerColor;
+        if (flowerColor == null || flowerColor.isEmpty() || flowerColor.isBlank()) {
+            this.flowerColor = "белый";
+        }  else  this.flowerColor = flowerColor;
     }
-
     public String getCountry() {
         return country;
     }
-
     public void setCountry(String country) {
-        this.country = country;
+        if (country == null || country.isEmpty() || country.isBlank()) {
+            this.country = "Россия";
+        }  else  this.country = country;
     }
-
     public double getCost() {
         return cost;
     }
-
     public void setCost(double cost) {
-        this.cost = cost;
+        if (cost <= 0) { this.cost = 1;
+        } else  this.cost = cost;
     }
-
     public int getLifeSpan() {
         return lifeSpan;
     }
@@ -65,10 +63,10 @@ public class Flower {
         }
     }  //******************************************************************************
 
-    void printFlower () {
-        System.out.println(this.nameFlower + ":" + "\t" + "цвет " + this.flowerColor + "\t" + "страна " + this.country
-                + "\t" + this.cost + " руб." + "\t" + "срок стояния " + this.lifeSpan + " дня.");
+    @Override
+    public String toString() {
+        return this.nameFlower + ":" + "\t" + "цвет " + this.flowerColor + "\t" + "страна " + this.country
+                + "\t" + this.cost + " руб." + "\t" + "срок стояния " + this.lifeSpan + " дня.";
     }
-
 
 }

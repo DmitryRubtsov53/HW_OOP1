@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import static java.lang.Integer.MAX_VALUE;
@@ -10,23 +11,21 @@ public class Main {
 
         System.out.println("Список людей:" + "\n");
         {
-            Human human1 = new Human("Максим", "Минск", 35, "бренд-менеджер");
-            human1.printHumans();
-            Human human2 = new Human("Аня", "Москва", 29, "методист образовательных программ");
-            human2.printHumans();
-            Human human3 = new Human("Катя", "Калининград", 28, "продакт-менеджер");
-            human3.printHumans();
-            Human human4 = new Human("Артём", "Москва", 27, "директор по развитию бизнеса");
-            human4.printHumans();
-            Human human5 = new Human(null, null, 0,null );
-            human5.printHumans();
-            Human human6 = new Human("Владимир", "Казань", 21,"безработный" );
-            human6.printHumans();
+            Human [] human = new Human[6];
+
+            human[0] = new Human("Максим", "Минск", 35, "бренд-менеджер");
+            human[1] = new Human("Аня", "Москва", 29, "методист образовательных программ");
+            human[2] = new Human("Катя", "Калининград", 28, "продакт-менеджер");
+            human[3] = new Human("Артём", "Москва", 27, "директор по развитию бизнеса");
+            human[4] = new Human(null, null, 0,null );
+            human[5] = new Human("Владимир", "Казань", 21,"безработный" );
+            printHumans(human);
 
             System.out.println();
             System.out.println("Изменил город и возраст в 4-й строке:");
-            human5.setTown("Уфа"); human5.setYearOfBirth(50);
-            human5.printHumans ();
+            human[4].setTown("Уфа"); human[4].setAge(50);
+            System.out.println("Привет! Меня зовут " + human[4].getName() + ". Я из города " + human[4].getTown() + ". Я родился в " +
+                (LocalDate.now().getYear() - human[4].getAge()) + " году. Я работаю на должности " + human[4].getPosition() + ". Будем знакомы!");
         }
 
         System.out.println();
@@ -40,7 +39,7 @@ public class Main {
         flower[2] = new Flower("Пион","","Англия",69.9,1);
         flower[3] = new Flower("Гипсофила","","Турция",19.5,10);
 
-        flower[0].printFlower (); flower[1].printFlower (); flower[2].printFlower (); flower[3].printFlower ();
+        printFlows (flower);
 
     // Количество цветов каждого вида в букете:
         int numbflower0 = 5;
@@ -50,6 +49,39 @@ public class Main {
 
         System.out.println();
         bouquet (flower, numbflower0,  numbflower1, numbflower2, numbflower3);
+
+    }  // Main **********************************************************************************
+
+    public static void bouquet (Flower [] flower, int numbflower0, int numbflower1, int numbflower2, int numbflower3) {
+
+        int lifeBouquet = MAX_VALUE;
+        for (Flower el : flower ) {
+            if (el.getLifeSpan() < lifeBouquet) lifeBouquet = el.getLifeSpan();
+        }
+        System.out.println("Состав букета: " );
+        if (numbflower0 != 0) System.out.println(" - " + flower[0].getNameFlower() + " " + numbflower0 + " шт.");
+        if (numbflower1 != 0) System.out.println(" - " + flower[1].getNameFlower() + " " + numbflower1 + " шт.");
+        if (numbflower2 != 0) System.out.println(" - " + flower[2].getNameFlower() + " " + numbflower2 + " шт.");
+        if (numbflower3 != 0) System.out.println(" - " + flower[3].getNameFlower() + " " + numbflower3 + " шт.");
+
+        double sum = numbflower0 * flower[0].getCost() + numbflower1 * flower[1].getCost() +
+                numbflower2 * flower[2].getCost() + numbflower3 * flower[3].getCost() ;
+
+        System.out.println("Стоимость букета с учетом 10% флориста: " + (float)(sum * 1.1) + " рублей.");
+
+        System.out.println("Срок стояния букета: " + lifeBouquet + " дня.");
+    }
+    public static void printFlows (Flower [] flower) {
+        for (Flower el : flower) {
+            System.out.println(el);
+        }
+    }
+    public static void printHumans (Human [] human) {
+        for (Human el : human) {
+            System.out.println(el);
+        }
+    }
+} // Class ****************************************************************************
 
 /*  ПЕРЕНОШУ ЭТО В НОВЫЙ ПРОЕКТ CAR -  HW_OOP2_CAR
         System.out.println();
@@ -70,25 +102,3 @@ public class Main {
         }
 
  */
-
-    }
-    public static void bouquet (Flower [] flower, int numbflower0, int numbflower1, int numbflower2, int numbflower3) {
-
-        int lifeBouquet = MAX_VALUE;
-        for (Flower el : flower ) {
-            if (el.getLifeSpan() < lifeBouquet) lifeBouquet = el.getLifeSpan();
-        }
-        System.out.println("Состав букета: " );
-        if (numbflower0 != 0) System.out.println(" - " + flower[0].getNameFlower() + " " + numbflower0 + " шт.");
-        if (numbflower1 != 0) System.out.println(" - " + flower[1].getNameFlower() + " " + numbflower1 + " шт.");
-        if (numbflower2 != 0) System.out.println(" - " + flower[2].getNameFlower() + " " + numbflower2 + " шт.");
-        if (numbflower3 != 0) System.out.println(" - " + flower[3].getNameFlower() + " " + numbflower3 + " шт.");
-
-        double sum = numbflower0 * flower[0].getCost() + numbflower1 * flower[1].getCost() +
-                numbflower2 * flower[2].getCost() + numbflower3 * flower[3].getCost() ;
-
-        System.out.println("Стоимость букета с учетом 10% флориста: " + (float)(sum * 1.1) + " рублей.");
-
-        System.out.println("Срок стояния букета: " + lifeBouquet + " дня.");
-    }
-}
