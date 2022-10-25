@@ -24,8 +24,8 @@ public class Main {
             System.out.println();
             System.out.println("Изменил город и возраст в 4-й строке:");
             human[4].setTown("Уфа"); human[4].setAge(50);
-            System.out.println("Привет! Меня зовут " + human[4].getName() + ". Я из города " + human[4].getTown() + ". Я родился в " +
-                (LocalDate.now().getYear() - human[4].getAge()) + " году. Я работаю на должности " + human[4].getPosition() + ". Будем знакомы!");
+            System.out.println(human[4]);
+
         }
 
         System.out.println();
@@ -67,8 +67,7 @@ public class Main {
         double sum = numbflower0 * flower[0].getCost() + numbflower1 * flower[1].getCost() +
                 numbflower2 * flower[2].getCost() + numbflower3 * flower[3].getCost() ;
 
-        System.out.println("Стоимость букета с учетом 10% флориста: " + (float)(sum * 1.1) + " рублей.");
-
+        System.out.println("Стоимость букета с учетом 10% флориста: " + String.format("%.5g", sum * 1.1) + " рублей.");
         System.out.println("Срок стояния букета: " + lifeBouquet + " дня.");
     }
     public static void printFlows (Flower [] flower) {
@@ -83,22 +82,3 @@ public class Main {
     }
 } // Class ****************************************************************************
 
-/*  ПЕРЕНОШУ ЭТО В НОВЫЙ ПРОЕКТ CAR -  HW_OOP2_CAR
-        System.out.println();
-        System.out.println("Задание 3." + "\n");
-        {
-            Car car1 = new Car("Lada", "Granta", 2015, "Россия", "желтый", 1.7);
-            car1.printCars();
-            Car car2 = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "черный", 3.0);
-            car2.printCars();
-            Car car3 = new Car("BMW", "Z8", 2021, "Германия", "черный", 3.0);
-            car3.printCars();
-            Car car4 = new Car("Kia", "Sportage", 2018, "Южная Корея", "красный", 2.4);
-            car4.printCars();
-            Car car5 = new Car("Hyundai", "Avante", 2016, "Южная Корея", "оранжевый", 1.6);
-            car5.printCars();
-            Car car6 = new Car(null, null, 0, null, null, 0);
-            car6.printCars();
-        }
-
- */
